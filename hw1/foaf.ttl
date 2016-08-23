@@ -1,0 +1,22 @@
+@prefix db:<http://example.org/> .
+@prefix FOAF:<http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+db:PengZhuoyi rdf:type FOAF:Person ;
+                FOAF:title db:Mr ;
+                FOAF:firstName db:Peng ;
+                FOAF:lastName db:Zhuoyi ;
+                FOAF:OnlineChatAccount "77063219@qq.com" ;
+                FOAF:homepage db:myHomePage ;
+                FOAF:deciction db:myPhoto ;
+                FOAF:phone db:18819253801 ;
+                FOAF:knows db:XiaoGuohui ;
+                FOAF:interest db:Salad ;
+                FOAF:interest db:MissionImpossible ;
+                FOAF:age db:20 ;
+                FOAF:Organization db:SYSU ;
+                FOAF:nick db:NAGI ;
+                FOAF:logo db:myLogo .
+db:Salad rdf:type db:food .
+db:MissionImpossible rdf:type db:movie .
+                

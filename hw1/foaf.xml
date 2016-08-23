@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:db="http://example.org/"
+	xmlns:FOAF="http://xmlns.com/foaf/0.1/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+<rdf:Description rdf:about="http://example.org/PengZhuoyi">
+	<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+	<FOAF:title rdf:resource="http://example.org/Mr"/>
+	<FOAF:firstName rdf:resource="http://example.org/Peng"/>
+	<FOAF:lastName rdf:resource="http://example.org/Zhuoyi"/>
+	<FOAF:OnlineChatAccount rdf:datatype="http://www.w3.org/2001/XMLSchema#string">77063219@qq.com</FOAF:OnlineChatAccount>
+	<FOAF:homepage rdf:resource="http://example.org/myHomePage"/>
+	<FOAF:deciction rdf:resource="http://example.org/myPhoto"/>
+	<FOAF:phone rdf:resource="http://example.org/18819253801"/>
+	<FOAF:knows rdf:resource="http://example.org/XiaoGuohui"/>
+	<FOAF:interest rdf:resource="http://example.org/Salad"/>
+	<FOAF:interest rdf:resource="http://example.org/MissionImpossible"/>
+	<FOAF:age rdf:resource="http://example.org/20"/>
+	<FOAF:Organization rdf:resource="http://example.org/SYSU"/>
+	<FOAF:nick rdf:resource="http://example.org/NAGI"/>
+	<FOAF:logo rdf:resource="http://example.org/myLogo"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://example.org/Salad">
+	<rdf:type rdf:resource="http://example.org/food"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://example.org/MissionImpossible">
+	<rdf:type rdf:resource="http://example.org/movie"/>
+</rdf:Description>
+
+</rdf:RDF>
