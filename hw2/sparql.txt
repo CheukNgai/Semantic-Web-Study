@@ -1,0 +1,81 @@
+# sid:14331224  name:pengzhuoyi
+
+Query:
+#1
+    statement:
+        PREFIX db:<http://example.org/>
+        PREFIX FOAF:<http://xmlns.com/foaf/0.1/>
+        PREFIX  rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        SELECT ?name WHERE {
+        ?name FOAF:title db:Mr.
+        }
+    
+    result:
+        name
+        http://example.org/PengZhuoyi
+
+        
+#2
+    statement:
+        PREFIX db:<http://example.org/>
+        PREFIX FOAF:<http://xmlns.com/foaf/0.1/>
+        PREFIX  rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        SELECT ?s ?p ?o WHERE {
+        ?s ?p ?o.
+        }
+    
+    result:
+    s	p	o
+    http://example.org/MissionImpossible	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://example.org/movie
+    http://example.org/PengZhuoyi	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://xmlns.com/foaf/0.1/Person
+    http://example.org/PengZhuoyi	http://xmlns.com/foaf/0.1/OnlineChatAccount	77063219@qq.com
+    http://example.org/PengZhuoyi	http://xmlns.com/foaf/0.1/Organization	http://example.org/SYSU
+    http://example.org/PengZhuoyi	http://xmlns.com/foaf/0.1/age	http://example.org/20
+    http://example.org/PengZhuoyi	http://xmlns.com/foaf/0.1/deciction	http://example.org/myPhoto
+    http://example.org/PengZhuoyi	http://xmlns.com/foaf/0.1/firstName	http://example.org/Peng
+    http://example.org/PengZhuoyi	http://xmlns.com/foaf/0.1/homepage	http://example.org/myHomePage
+    http://example.org/PengZhuoyi	http://xmlns.com/foaf/0.1/interest	http://example.org/MissionImpossible
+    http://example.org/PengZhuoyi	http://xmlns.com/foaf/0.1/interest	http://example.org/Salad
+    http://example.org/PengZhuoyi	http://xmlns.com/foaf/0.1/knows	http://example.org/XiaoGuohui
+    http://example.org/PengZhuoyi	http://xmlns.com/foaf/0.1/lastName	http://example.org/Zhuoyi
+    http://example.org/PengZhuoyi	http://xmlns.com/foaf/0.1/logo	http://example.org/myLogo
+    http://example.org/PengZhuoyi	http://xmlns.com/foaf/0.1/nick	http://example.org/NAGI
+    http://example.org/PengZhuoyi	http://xmlns.com/foaf/0.1/phone	http://example.org/18819253801
+    http://example.org/PengZhuoyi	http://xmlns.com/foaf/0.1/title	http://example.org/Mr
+    http://example.org/Salad	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://example.org/food
+    
+
+#3
+    statement:
+        PREFIX db:<http://example.org/>
+        PREFIX FOAF:<http://xmlns.com/foaf/0.1/>
+        PREFIX  rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        SELECT ?name ?film WHERE {
+        ?name FOAF:firstName db:Peng;
+        FOAF:lastName db:Zhuoyi;
+        FOAF:interest ?film.
+        ?film rdf:type db:movie.
+        }
+    
+    result:
+        name	film
+        http://example.org/PengZhuoyi	http://example.org/MissionImpossible
+
+#4
+    statement
+        PREFIX db:<http://example.org/>
+        PREFIX FOAF:<http://xmlns.com/foaf/0.1/>
+        PREFIX  rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        SELECT ?name ?food WHERE {
+        ?name FOAF:firstName db:Peng;
+        FOAF:lastName db:Zhuoyi;
+        FOAF:interest ?food.
+        ?food rdf:type db:food.
+        }
+        
+    result:
+        name	food
+        http://example.org/PengZhuoyi	http://example.org/Salad
+
+
+
