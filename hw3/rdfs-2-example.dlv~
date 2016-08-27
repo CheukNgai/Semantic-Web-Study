@@ -1,0 +1,7 @@
+% RDFS2
+triple(Y, "rdf:type", X) :- triple(A, "rdfs:domain", X),
+							triple(Y, A, Z).
+
+triple(":hasTripAdvisorRating", "rdfs:domain", ":TourismObject").
+
+triple("i:ChickenHut", ":hasTripAdvisorRating", "3.5") .

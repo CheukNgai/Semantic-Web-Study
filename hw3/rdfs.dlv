@@ -1,0 +1,29 @@
+%rdfs2, rdfs3, rdfs5, rdfs7, rdfs9, rdfs11
+
+%rdfs2
+triple(Y, "rdf:type", X) :- triple(A, "rdfs:domain", X),
+							triple(Y, A, Z).
+
+%rdfs3
+triple(Z, "rdf:type", X) :- triple(A, "rdfs:range", X),
+							triple(Y, A, Z).
+							
+%rdfs5
+triple(X, "rdfs:subPropertyOf", Z) :- triple(X, "rdfs:subPropertyOf", Y),
+                                      triple(Y, "rdfs:subPropertyOf", Z).
+                                      
+%rdfs7
+triple(X, B, Y) :- triple(A ,"rdfs:subPropertyOf", B),
+                   triple(X, A, Y) .
+                   
+%rdfs9
+triple(Z, "rdf:type",  Y) :- triple(X, "rdfs:subClassOf", Y),
+                             triple(Z, "rdf:type", X) .
+                             
+%rdfs11
+triple(X, "rdfs:subClassOf", Z) :- triple(X, "rdfs:subClassOf", Y),
+                                   triple(Y, "rdfs:subClassOf", Z) .
+                                   
+%rdfs4a
+triple(X, "rdf:type", "rdfs:Resource") :- triple(X, A, Y) .
+

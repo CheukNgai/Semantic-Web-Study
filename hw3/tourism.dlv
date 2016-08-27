@@ -1,0 +1,18 @@
+triple(":Museum", "rdfs:subClassOf", ":TourismAttraction") .
+triple(":ArtMeseum", "rdfs:subClassOf", ":Museum") .
+triple(":ModernArtMuseum", "rdfs:subClassOf", ":ArtMeseum") .
+triple(":Landmark", "rdfs:subClassOf", ":TourismAttraction") .
+triple(":OutdoorSpot", "rdfs:subClassOf", ":TourismAttraction") .
+triple(":AmusementPark", "rdfs:subClassOf", ":TourismAttraction") .
+triple(":Restaurant", "rdfs:subClassOf", ":TourismObject") .
+triple(":Hotel", "rdfs:subClassOf", ":TourismObject") .
+triple(":TourismAttraction", "rdfs:subClassOf", ":TourismObject") .
+triple(":hasTripAdvisorRating", "rdfs:domain", ":TourismObject") .
+triple(":hasTripAdvisorRating", "rdfs:subPropertyOf", ":hasRating") .
+triple("i:Museion", "rdf:type", ":ModernArtMuseum") .
+triple("i:ChickenHut", ":hasTripAdvisorRating", "3.5") .
+triple(":hasTripAdvisorRating", "rdfs:range", "xsd:decimal") .
+
+%Optional ontologies
+triple(":hasRating", "rdfs:subPropertyOf", ":hasSomething") .
+

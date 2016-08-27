@@ -1,0 +1,31 @@
+本次实验通过书写ontology和rule，利用dlv系统进行RDFS reasoning。
+
+额外的，在tourism.dlv文件增加了一个ontology和rdfs.dlv增加了rdfs4a
+
+Command Line输入如下命令，并得到结果
+
+ngai@ngai-Aspire-E1-572G:~/Desktop/sw_study/hw3$ ./dlv.x86-64-linux-elf-static.bin tourism.dlv rdfs.dlv
+DLV [build BEN/Dec 17 2012   gcc 4.6.1]
+
+{triple(":Museum","rdfs:subClassOf",":TourismAttraction"), triple(":Museum","rdfs:subClassOf",":TourismObject"), triple(":Museum","rdf:type","rdfs:Resource"), triple(":TourismAttraction","rdfs:subClassOf",":TourismObject"), triple(":TourismAttraction","rdf:type","rdfs:Resource"), triple(":ArtMeseum","rdfs:subClassOf",":Museum"), triple(":ArtMeseum","rdfs:subClassOf",":TourismAttraction"), triple(":ArtMeseum","rdfs:subClassOf",":TourismObject"), triple(":ArtMeseum","rdf:type","rdfs:Resource"), triple(":ModernArtMuseum","rdfs:subClassOf",":Museum"), triple(":ModernArtMuseum","rdfs:subClassOf",":TourismAttraction"), triple(":ModernArtMuseum","rdfs:subClassOf",":ArtMeseum"), triple(":ModernArtMuseum","rdfs:subClassOf",":TourismObject"), triple(":ModernArtMuseum","rdf:type","rdfs:Resource"), triple(":Landmark","rdfs:subClassOf",":TourismAttraction"), triple(":Landmark","rdfs:subClassOf",":TourismObject"), triple(":Landmark","rdf:type","rdfs:Resource"), triple(":OutdoorSpot","rdfs:subClassOf",":TourismAttraction"), triple(":OutdoorSpot","rdfs:subClassOf",":TourismObject"), triple(":OutdoorSpot","rdf:type","rdfs:Resource"), triple(":AmusementPark","rdfs:subClassOf",":TourismAttraction"), triple(":AmusementPark","rdfs:subClassOf",":TourismObject"), triple(":AmusementPark","rdf:type","rdfs:Resource"), triple(":Restaurant","rdfs:subClassOf",":TourismObject"), triple(":Restaurant","rdf:type","rdfs:Resource"), triple(":Hotel","rdfs:subClassOf",":TourismObject"), triple(":Hotel","rdf:type","rdfs:Resource"), triple(":hasTripAdvisorRating","rdfs:domain",":TourismObject"), triple(":hasTripAdvisorRating","rdfs:subPropertyOf",":hasRating"), triple(":hasTripAdvisorRating","rdfs:subPropertyOf",":hasSomething"), triple(":hasTripAdvisorRating","rdf:type","rdfs:Resource"), triple(":hasTripAdvisorRating","rdfs:range","xsd:decimal"), triple(":hasRating","rdfs:subPropertyOf",":hasSomething"), triple(":hasRating","rdf:type","rdfs:Resource"), triple("i:Museion","rdf:type",":Museum"), triple("i:Museion","rdf:type",":TourismAttraction"), triple("i:Museion","rdf:type",":ArtMeseum"), triple("i:Museion","rdf:type",":ModernArtMuseum"), triple("i:Museion","rdf:type",":TourismObject"), triple("i:Museion","rdf:type","rdfs:Resource"), triple("i:ChickenHut",":hasTripAdvisorRating","3.5"), triple("i:ChickenHut",":hasRating","3.5"), triple("i:ChickenHut","rdf:type",":TourismObject"), triple("i:ChickenHut","rdf:type","rdfs:Resource"), triple("i:ChickenHut",":hasSomething","3.5"), triple("3.5","rdf:type","xsd:decimal"), triple("3.5","rdf:type","rdfs:Resource")}
+
+
+根据rdfs2，以及triple(":hasTripAdvisorRating", "rdfs:domain", ":TourismObject") . 和 triple("i:ChickenHut", ":hasTripAdvisorRating", "3.5") .
+可以得到triple("i:ChickenHut","rdf:type",":TourismObject").
+
+根据rdfs3，以及triple(":hasTripAdvisorRating", "rdfs:range", "xsd:decimal") .
+得到triple("3.5","rdf:type","xsd:decimal").
+
+根据rdfs5，以及triple(":hasTripAdvisorRating", "rdfs:subPropertyOf", ":hasRating") .和triple(":hasRating", "rdfs:subPropertyOf", ":hasSomething") .
+可以得到triple(":hasRating","rdfs:subPropertyOf",":hasSomething").
+
+根据rdfs7，可以得到("i:ChickenHut",":hasSomething","3.5").
+
+根据rdfs9, 可以得到("i:ChickenHut","rdf:type",":TourismObject").
+
+根据rdfs11， 可以得到(":Museum","rdfs:subClassOf",":TourismObject").
+
+额外增加了rdfs4a， 可以得到("i:ChickenHut","rdf:type","rdfs:Resource").
+
+心得：学习到rdfs的推断机制，对比出rdfs与rdf的不同。
+
